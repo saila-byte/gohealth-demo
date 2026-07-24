@@ -25,3 +25,18 @@ Open http://localhost:5173
 - `npm run dev:all` — Express (`:3001`) + Vite (`:5173`) with `/api` proxy
 - `npm run server` — API only
 - `npm run build && npm start` — production (API + `dist/`)
+
+## Deploy (Render)
+
+Repo: https://github.com/saila-byte/gohealth-demo
+
+1. In [Render](https://dashboard.render.com), **New → Web Service** and connect `saila-byte/gohealth-demo`
+2. Settings:
+   - **Build command:** `npm install && npm run build`
+   - **Start command:** `npm start`
+3. Environment variables:
+   - `TAVUS_API_KEY` — your Tavus API key
+   - `TAVUS_PERSONA_ID` — Alex’s persona/pal id (see `.env.example`)
+4. Deploy
+
+Or use **New → Blueprint** with the included [`render.yaml`](render.yaml).
