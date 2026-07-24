@@ -1,0 +1,491 @@
+.container {
+	position: relative;
+	width: 100%;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	aspect-ratio: 9/16;
+	overflow: hidden;
+	border-radius: 0.5rem;
+	max-height: 90vh;
+	background: linear-gradient(145deg, #1c2b39 0%, #0f1720 55%, #163042 100%);
+	border: 1px solid #e3e8ec;
+	box-shadow: 0 8px 28px rgba(28, 43, 57, 0.18);
+	border-radius: 16px;
+}
+
+@media (min-width: 768px) {
+	.container {
+		aspect-ratio: 16/9;
+	}
+}
+
+.errorContainer {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(248, 250, 252, 0.08);
+	color: white;
+	height: 100%;
+	font-size: 1.5rem;
+	font-weight: 600;
+	text-align: center;
+}
+
+.videoContainer {
+	position: relative;
+	z-index: 5;
+	width: 100%;
+	height: 100%;
+}
+
+.footer {
+	position: absolute;
+	bottom: 1.5rem;
+	left: 0;
+	right: 0;
+	z-index: 20;
+}
+
+.footerControls {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 16px;
+}
+
+.leaveButton {
+	background: #f47b20;
+	color: white;
+	border: none;
+	font-size: 16px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	height: 3rem;
+	width: 3rem;
+	border-radius: 9999px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.leaveButton:hover {
+	opacity: 0.8;
+}
+
+.leaveButtonIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ReplicaVideo styles */
+.mainVideoContainer {
+	background: transparent;
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.mainVideoContainerScreenSharing {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.mainVideo {
+	position: absolute;
+	inset: 0;
+	object-position: center;
+	object-fit: cover !important;
+	height: 100%;
+	width: 100%;
+	transition: all 0.3s ease;
+}
+
+.mainVideoScreenSharing {
+	object-fit: contain !important;
+}
+
+.mainVideoHidden {
+	display: none;
+}
+
+/* PreviewVideo styles */
+.previewVideoContainer {
+	position: relative;
+	background: rgba(2, 6, 23, 0.3);
+	aspect-ratio: 16/9;
+	width: 11rem;
+	border-radius: 1rem;
+	overflow: hidden;
+	max-height: 120px;
+	z-index: 10;
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+	border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+@media (min-width: 768px) {
+	.previewVideoContainer {
+		max-height: 100%;
+	}
+}
+
+@media (min-width: 1024px) {
+	.previewVideoContainer {
+		width: 17.875rem;
+	}
+}
+
+/* Compact Alex tile while a presentation is up */
+.previewVideoContainerCompact {
+	width: 6.5rem;
+	max-height: 68px;
+	border-radius: 0.65rem;
+}
+
+@media (min-width: 768px) {
+	.previewVideoContainerCompact {
+		width: 7.5rem;
+		max-height: 84px;
+	}
+}
+
+@media (min-width: 1024px) {
+	.previewVideoContainerCompact {
+		width: 8.5rem;
+		max-height: 96px;
+	}
+}
+
+.previewVideoCompact {
+	max-height: 68px;
+}
+
+@media (min-width: 768px) {
+	.previewVideoCompact {
+		max-height: 84px;
+	}
+}
+
+@media (min-width: 1024px) {
+	.previewVideoCompact {
+		max-height: 96px;
+	}
+}
+
+.previewVideoContainerVertical {
+	height: 40.5rem;
+	width: 6rem;
+}
+
+.previewVideoContainerHidden {
+	background: transparent;
+	display: none;
+}
+
+.previewVideo {
+	width: 100%;
+	height: auto;
+	max-height: 120px;
+}
+
+@media (min-width: 768px) {
+	.previewVideo {
+		max-height: 100%;
+	}
+}
+
+.previewVideoVertical {
+	height: 40.5rem;
+	width: 6rem;
+	object-fit: cover;
+}
+
+.previewVideoHidden {
+	display: none;
+}
+
+/* Main video container */
+.mainVideoContainer {
+	width: 100%;
+	height: 100%;
+}
+
+/* Self view container */
+.selfViewContainer {
+	position: absolute;
+	bottom: 5rem;
+	left: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+	.selfViewContainer {
+		bottom: 1rem;
+	}
+}
+
+/* Waiting message container */
+/* Start of Selection */
+.waitingContainer {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: transparent;
+	color: white;
+	height: 100%;
+	font-size: 1.5rem;
+	font-weight: 600;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+/* End of Selection */
+
+.audioWaveContainer {
+	position: absolute;
+	bottom: 0.5rem;
+	right: 0.5rem;
+}
+
+/* ---- Live captions overlay ---- */
+.captionOverlay {
+	position: absolute;
+	bottom: 5.5rem;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 15;
+	max-width: min(80%, 720px);
+	display: flex;
+	align-items: baseline;
+	gap: 0.5rem;
+	padding: 0.6rem 1rem;
+	border-radius: 12px;
+	background: rgba(2, 6, 23, 0.68);
+	backdrop-filter: blur(6px);
+	color: #fff;
+	text-align: left;
+	box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
+}
+
+.captionSpeaker {
+	flex-shrink: 0;
+	font-size: 0.72rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: #f9a55e;
+}
+
+.captionText {
+	font-size: 0.95rem;
+	line-height: 1.4;
+}
+
+/* ---- Chat toggle button ---- */
+.chatToggleButton {
+	background: rgba(255, 255, 255, 0.95);
+	color: #020617;
+	border: none;
+	cursor: pointer;
+	height: 3rem;
+	width: 3rem;
+	border-radius: 9999px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.2s ease;
+}
+
+.chatToggleButton:hover {
+	opacity: 0.85;
+}
+
+.chatToggleButtonActive {
+	background: #00a3e0;
+	color: #fff;
+}
+
+/* ---- Chat / transcript panel ---- */
+.chatPanel {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: min(360px, 88%);
+	z-index: 30;
+	display: flex;
+	flex-direction: column;
+	background: rgba(11, 20, 30, 0.94);
+	backdrop-filter: blur(10px);
+	border-left: 1px solid rgba(255, 255, 255, 0.1);
+	transform: translateX(100%);
+	transition: transform 0.28s ease;
+	text-align: left;
+}
+
+.chatPanelOpen {
+	transform: translateX(0);
+}
+
+.chatHeader {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1rem 1.1rem;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.chatTitle {
+	font-size: 0.95rem;
+	font-weight: 700;
+	color: #fff;
+}
+
+.chatClose {
+	background: transparent;
+	border: none;
+	color: rgba(255, 255, 255, 0.7);
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	padding: 0.25rem;
+	border-radius: 8px;
+}
+
+.chatClose:hover {
+	color: #fff;
+	background: rgba(255, 255, 255, 0.08);
+}
+
+.chatMessages {
+	flex: 1;
+	overflow-y: auto;
+	padding: 1rem 1.1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.85rem;
+}
+
+.chatEmpty {
+	margin: auto 0;
+	color: rgba(255, 255, 255, 0.55);
+	font-size: 0.9rem;
+	line-height: 1.5;
+	text-align: center;
+}
+
+.chatRow {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+	max-width: 88%;
+}
+
+.chatRowUser {
+	align-self: flex-end;
+	align-items: flex-end;
+}
+
+.chatRowReplica {
+	align-self: flex-start;
+	align-items: flex-start;
+}
+
+.chatAuthor {
+	font-size: 0.68rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.chatBubble {
+	padding: 0.6rem 0.85rem;
+	border-radius: 14px;
+	font-size: 0.92rem;
+	line-height: 1.45;
+	color: #fff;
+	word-break: break-word;
+}
+
+.chatRowReplica .chatBubble {
+	background: rgba(255, 255, 255, 0.1);
+	border-bottom-left-radius: 4px;
+}
+
+.chatRowUser .chatBubble {
+	background: #00a3e0;
+	border-bottom-right-radius: 4px;
+}
+
+.chatInputRow {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.85rem 1rem;
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.chatInput {
+	flex: 1;
+	padding: 0.7rem 0.9rem;
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.15);
+	background: rgba(255, 255, 255, 0.06);
+	color: #fff;
+	font-size: 0.92rem;
+	font-family: inherit;
+	outline: none;
+}
+
+.chatInput::placeholder {
+	color: rgba(255, 255, 255, 0.4);
+}
+
+.chatInput:focus {
+	border-color: #00a3e0;
+	box-shadow: 0 0 0 3px rgba(0, 163, 224, 0.2);
+}
+
+.chatSend {
+	flex-shrink: 0;
+	height: 2.75rem;
+	width: 2.75rem;
+	border-radius: 10px;
+	border: none;
+	background: #f47b20;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: opacity 0.2s ease;
+}
+
+.chatSend:hover:not(:disabled) {
+	opacity: 0.85;
+}
+
+.chatSend:disabled {
+	opacity: 0.4;
+	cursor: not-allowed;
+}

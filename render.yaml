@@ -1,0 +1,18 @@
+# Render Blueprint — GoHealth × Tavus onboarding demo
+# https://render.com/docs/blueprint-spec
+
+services:
+  - type: web
+    name: gohealth-tavus-demo
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: TAVUS_API_KEY
+        sync: false
+      - key: TAVUS_PERSONA_ID
+        sync: false
