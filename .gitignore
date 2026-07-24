@@ -15,3 +15,4 @@ dist-ssr
 *.swp
 .idea
 .vscode
+.gh-config/
